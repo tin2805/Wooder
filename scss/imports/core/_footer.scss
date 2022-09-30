@@ -1,0 +1,58 @@
+footer {
+	--heightFooter: 50px;
+	--logoSize: 100%;
+	--fz-text: 15px
+	font-family: 'ProximaRG';
+	background-color: $black-cl;
+	color: $white-cl;
+	height: var(--heightFooter);
+	.container-fluid{
+		height: 100%;
+		.container{
+			display: flex;
+			height: 100%;
+			width: 100%;
+			align-items: center;
+			justify-content: space-between;
+			margin: auto;
+			text-transform: uppercase;
+			.copy{
+				font-size: var(--fz-text);
+			}
+			.logo{
+				left: 50%;
+				transform: translateX(-10%); 
+			}
+			.backtop{
+				font-size: var(--fz-text);
+				cursor: pointer;
+			}
+
+		}
+	}
+	@include desktop {
+				
+	}
+	@include tablet {
+		--fz-text: 10px;
+		.container-fluid{
+			padding: 0;
+		}
+	}
+	@include mobile {
+		--fz-text: 10px;
+		--heightFooter: 30px;
+		padding: 0 20px;
+		.container-fluid{
+			.copy{
+				display: none;
+			}
+			.logo{
+			}
+		}
+
+	}
+	@include mobile-xxs {
+		
+	}
+}

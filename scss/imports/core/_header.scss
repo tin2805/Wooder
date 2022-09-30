@@ -1,0 +1,202 @@
+header{
+    --heightHeader: 80px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: var(--heightHeader);
+    --logo-size: 100%;
+    font-family: 'ProximaRGB';
+    .container-fluid{
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo{
+            .logo1{
+                width: var(--logo-size);
+            }
+        }
+        .menu{
+            display: flex;
+            height: 100%;
+            left: 50%;
+            transform: translateX(0); 
+            align-items: center;
+            li{
+                height: 100%;
+                width: 100%;
+                a{
+                    position: relative;
+                    display: flex;
+                    height: 100%;
+                    color: #a7a7a8;
+                    text-decoration: none;
+                    align-items: center;
+                    overflow: hidden;
+                    @include transition($t);
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background-color: #fff;
+                        left: 0;
+                        bottom: 20px;
+                        @include transform(scaleX(0));
+                        @include transform-origin(left center);
+                        @include transition($t);
+                    }
+                    &.active,
+                    &:hover{
+                        &::after{
+                            @include transform(scaleX(1));
+                            @include transform-origin(right center);
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+        .right{
+            display: inline-flex;
+        }
+        .lang{
+            position: relative;
+            display: flex;
+            cursor: pointer;
+            height: 100%;
+            align-items: center;
+            .lang__en{
+                color: #a6a7a7;
+            }
+            .lang__option{
+                display: flex;
+                height: 100%;
+                padding: 0 15px;
+                color: #7c6d53;
+                align-items: center;
+            }
+            .lang__list{
+                position: absolute;
+                display: none;
+                text-align: center;
+                top: calc(var(--heightHeader) / 2);
+                width: 60px;
+                height: 80px;
+                background-color: white;
+            }
+            &:hover{
+                .lang__list{
+                    display: block;
+                }
+            }
+        }
+        .btnmenu{
+            position: relative;
+            display: none;
+            width: 40px;
+            height: 22px;
+            z-index: 300;
+            cursor: pointer;
+            span{
+                width: 100%;
+                height: 2px;
+                display: block;
+                background-color: yellow;
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition(0.3s);
+            }
+            &::before,&::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                display: block;
+                background-color: yellow;
+                @include transform(rotate(0deg) translateY(0px));
+                @include transition(0.3s);
+            }
+            &::after{
+                position: absolute;
+                bottom: 0;
+            }
+            &.clicked{
+                &::before{
+                    @include transform(rotate(45deg) translate(6px,8px));
+                    @include transition(0.3s);
+                }
+                span{
+                    opacity: 0;
+                    @include transition(0.3s);
+                }
+                &::after{
+                    @include transform(rotate(-45deg) translate(6px,-8px));
+                    @include transition(0.3s);
+                }
+            }
+        }
+    }
+    .nav{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: $black-cl;
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include transform(initial);
+        z-index: 100;
+        opacity: 0;
+        @include transition(opacity 0.3s);
+        ul{
+            flex-direction: column;
+            @include mid();
+            li{
+                margin: 0 auto;
+                a{
+                    padding: 20px;
+                    color: $white-cl;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    @include tablet{
+        height: 60px;
+        .container-fluid{
+            .menu{
+                display:none;
+            }
+            .btnmenu{
+                display:block;
+            }
+        }
+        .nav{
+            @include transition(opacity 0.3s);
+            &.active{
+                display: block;
+                opacity: 1;
+                pointer-events: auto;
+                @include transition(opacity 0.3s);
+            } 
+        }
+    }
+    @include mobile{
+        --heightHeader: 50px
+        --logo-size: 100%;
+        .nav{
+            &.active{
+                display: block;
+                opacity: 1;
+                pointer-events: auto;
+                @include transition(opacity 0.3s);
+            }
+        
+        }
+        .btnmenu{
+            display: block;
+        }
+    }
+}
