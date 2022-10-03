@@ -120,3 +120,9 @@ document.querySelector('.popup-video .close').addEventListener('click', function
     document.querySelector('.popup-video').style.display = 'none'
     iframeVideo.src = ''
 })
+//carousell
+$('.main-carousel').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true
+  });

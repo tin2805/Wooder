@@ -179,9 +179,38 @@ main{
                 }
             }
         }
+        .main-carousel{
+            width: 100%;
+            .carousel-cell {
+                width: 50%; /* half-width */
+                height: 160px;
+                margin-right: 10px;
+              }
+              .flickity-page-dots {
+                display: none;
+                .dot {
+                    display: none;
+                    height: 4px;
+                    width: 40px;
+                    margin: 0;
+                    border-radius: 0;
+                  }
+              }
+
+        }
+
         @include tablet{
             --fz-title: 60px;
-            --img-size: 600px
+            --img-size: 600px;
+            .main-carousel{
+                width: 100%;
+                .carousel-cell {
+                    width: 50%; /* half-width */
+                    height: 160px;
+                    margin-right: 10px;
+                  }
+            }
+    
         }
         @include mobile{
             width: 100%;
@@ -196,7 +225,15 @@ main{
                     }
                 }
             }
-
+            .main-carousel{
+                width: 100%;
+                .carousel-cell {
+                    width: 50%; /* half-width */
+                    height: 160px;
+                    margin-right: 10px;
+                  }
+            }
+    
         }
     }
     .preview{

@@ -1,6 +1,7 @@
 {
   "name": "wooder",
   "version": "1.0.0",
+  "homepage": "https://tin2805.github.io/Wooder/"
   "description": "This is grunt template project for training",
   "main": "index.js",
   "scripts": {
@@ -9,7 +10,7 @@
   "keywords": [
     "task"
   ],
-  "author": "Nghia Tran",
+  "author": "Loyal",
   "license": "ISC",
   "devDependencies": {
     "grunt": "^1.4.1",
@@ -24,6 +25,7 @@
   "dependencies": {
     "-": "0.0.1",
     "flickity": "^2.2.1",
+    "gh-pages": "^4.0.0",
     "grunt-cli": "^1.4.3"
   }
 }

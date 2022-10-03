@@ -20,10 +20,11 @@
     <link rel="stylesheet" href="dest/style.min.css">
     <link rel="stylesheet" href="dest/fonts.css">
     <link rel="stylesheet" href="dest/stylelibs.min.css">
+    <link href="./css/flickity.css" media="screen">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- Core CSS file -->
-<link rel="stylesheet" href="../project/css/libs/photoswipe.css"> 
+<link rel="stylesheet" href="./css/libs/photoswipe.css"> 
 
 <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
      In the folder of skin CSS file there are also:
@@ -32,10 +33,10 @@
 <link rel="stylesheet" href=""> 
 
 <!-- Core JS file -->
-<script src="../project/js/libs/photoswipe.min.js"></script> 
+<script src="./js/libs/photoswipe.min.js"></script> 
 
 <!-- UI JS file -->
-<script src="../project/js/libs/photoswipe-ui-default.min.js"></script> 
+<script src="./js/libs/photoswipe-ui-default.min.js"></script> 
     <style>
         .slider__image-item {
             display: none;
@@ -296,11 +297,19 @@
             </div>
         </section>
         
-        <div class="main-carousel">
-            <img src="./img/r.jpg" alt="">
-            <img src="./img/e.jpg" alt="">
-            <img src="./img/t.jpg" alt="">
-            <img src="./img/y.jpg" alt="">
+        <div class="main-carousel" >
+            <div class="carousel-cell">
+                <img src="./img/r.jpg" alt="">
+            </div>
+            <div class="carousel-cell">
+                <img src="./img/e.jpg" alt="">
+            </div>
+            <div class="carousel-cell">
+                <img src="./img/t.jpg" alt="">
+            </div>
+            <div class="carousel-cell">
+                <img src="./img/y.jpg" alt="">
+            </div>
         </div>
     </main>
     
@@ -364,6 +373,20 @@
     </div>
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/libs/flickity.pkgd.min.js"></script>
+    <!-- <script type="text/javascript">
+        function listener(/* parameters */) {
+            console.log('eventName happened');
+            }
+            // bind event listener
+            $carousel.on( 'eventName.flickity', listener );
+            // unbind event listener
+            $carousel.off( 'eventName.flickity', listener );
+            // bind event listener to trigger once. note ONE not ON
+            $carousel.one( 'eventName.flickity', function() {
+            console.log('eventName happened just once');
+        });
+    </script> -->
 </body>
 
 </html>
